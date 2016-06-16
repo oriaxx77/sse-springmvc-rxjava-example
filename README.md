@@ -1,6 +1,4 @@
-"# sse-springmvc-rxjava-example" 
-
-Server Sent Event example with Spring MVC and Rxjava
+ Server Sent Event example with Spring MVC and Rxjava
 -----------------------------------------------------------------------
 ----------------------------------------------------------------------
 Example application for Server Sent Events using Spring MVC and RxJava

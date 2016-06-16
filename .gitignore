@@ -10,3 +10,4 @@ gradlew.bat
 bin/
 .classpath
 .project
+.gradle/
