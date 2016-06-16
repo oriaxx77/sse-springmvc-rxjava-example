@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SSE Consumer</title>
+</head>
+<body>
+	
+	<h1>Mined Coins</h1>
+	<p>From URL: http://localhost:8080/coinminer/mine/7</p>	
+	<p><ul id="eventList"></ul></p>
+	<script type="text/javascript">
+	
+		var requiredCoinCount = 7
+		var actualCoinCount = 0
+		var eventListElement = document.getElementById("eventList");
+		var eventSource = new EventSource( "../coinminer/mine/"+requiredCoinCount);
+		
+		eventSource.onerror = function(e){
+			console.log(e);
+		};
+		
+		eventSource.addEventListener("CoinMined", function(e) {
+			  
+			var serverSentEvent = JSON.parse(e.data)
+			var newElement = document.createElement("li");
+			newElement.innerHTML = "Coin[value= " + serverSentEvent.value + "]";
+			eventListElement.appendChild(newElement);
+			actualCoinCount += 1;
+			if ( actualCoinCount == requiredCoinCount)
+				this.close();
+			  
+		}, false);
+		
+	</script>
+	
+</body>
+</html>
