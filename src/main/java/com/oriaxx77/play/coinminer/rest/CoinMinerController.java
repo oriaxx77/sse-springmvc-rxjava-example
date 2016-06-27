@@ -41,7 +41,7 @@ public class CoinMinerController {
 	public SseEmitter mine( @PathVariable int coinCount ) {
 		final SseEmitter sseEmitter = new SseEmitter();
 		coinMiner.mine( coinCount ).subscribe( 
-							value -> sendCoinMinedEvent(sseEmitter,value),
+							coin -> sendCoinMinedEvent(sseEmitter,coin),
 							sseEmitter::completeWithError,
 							sseEmitter::complete );		
 		return sseEmitter;

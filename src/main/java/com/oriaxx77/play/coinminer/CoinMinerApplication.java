@@ -27,3 +27,4 @@ public class CoinMinerApplication {
 		SpringApplication.run(CoinMinerApplication.class, args);
 	}
 }
+

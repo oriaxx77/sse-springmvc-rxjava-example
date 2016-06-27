@@ -79,3 +79,6 @@ resource. It doesn't care about the how, but cares about the what.
 The CoinMiner#mine() method returns an Observable<Coin>. I'm not sure if 
 I like it or not since it ties the interface to RxJava.
 
+6.3 Integration Testing Spring MVC Controllers with SseEmitter return value.
+-----------------------------------------------------------------------------
+See the CoinMinerContollerTest.java for the current approach. It has some room to improve. 
